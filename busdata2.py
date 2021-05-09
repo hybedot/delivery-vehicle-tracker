@@ -1,3 +1,4 @@
+import os
 from pykafka import KafkaClient
 import json
 from datetime import datetime
@@ -14,8 +15,8 @@ def generate_uuid():
     return uuid.uuid4()
 
 #KAFKA PRODUCER
-client = KafkaClient(hosts="35.194.31.81:9092")
-topic = client.topics['first-topic']
+client = KafkaClient(hosts=os.environ.get('host'))
+topic = client.topics[os.environ.get('topic')]
 producer = topic.get_sync_producer()
 
 #CONSTRUCT MESSAGE AND SEND IT TO KAFKA
