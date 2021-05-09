@@ -5,7 +5,7 @@ import uuid
 import time
 
 #READ COORDINATES FROM GEOJSON
-input_file = open('./data/bus2.json')
+input_file = open('./data/vi-2.json')
 json_array = json.load(input_file)
 coordinates = json_array['features'][0]['geometry']['coordinates']
 
@@ -14,8 +14,8 @@ def generate_uuid():
     return uuid.uuid4()
 
 #KAFKA PRODUCER
-client = KafkaClient(hosts="localhost:9092")
-topic = client.topics['geodata_final123']
+client = KafkaClient(hosts="35.194.31.81:9092")
+topic = client.topics['first-topic']
 producer = topic.get_sync_producer()
 
 #CONSTRUCT MESSAGE AND SEND IT TO KAFKA
