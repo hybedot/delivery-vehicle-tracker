@@ -1,9 +1,10 @@
 import os
-from pykafka import KafkaClient
 import json
 from datetime import datetime
 import uuid
 import time
+
+from pykafka import KafkaClient
 from dotenv import load_dotenv
 
 load_dotenv()

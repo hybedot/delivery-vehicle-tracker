@@ -1,8 +1,9 @@
+import os
 from flask import Flask, render_template, Response
 from pykafka import KafkaClient
 
 def get_kafka_client():
-    return KafkaClient(hosts='35.194.31.81:9092')
+    return KafkaClient(hosts=os.environ.get('host'))
 
 app = Flask(__name__)
 
