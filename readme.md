@@ -16,19 +16,21 @@ The delivery vehicle tracker tracks three delivery vehicles that deliver around 
   - Use `docker ps` to get the name of the Kafka container
   - Use the command `docker exec -it <container name> /bin/bash` to get a bash shell in the container
   
-    ``` 
-# run this command to create a topic
-Kafka-topics --zookeeper <zookeeper-container-name:port> --topic <topic name> --create --partitions <number> --replication-factor <number> 
-```
+    
+
+  ``` 
+  \# Run this command to create a topic
+  Kafka-topics --zookeeper <zookeeper-container-name:port> --topic <topic name> --create --partitions <number> --replication-factor <number> 
+  ```
 
 
 ### Run Application
 
 * Update the .env file 
-```
-host=hostaddress:port
-topic=topic-name
-```
+  ```
+  host=hostaddress:port
+  topic=topic-name
+  ```
 
 * Install Dependencies
   ```
@@ -37,14 +39,14 @@ topic=topic-name
 
 * Start Producers
   ```
-python busdata1.py
-python busdata2.py
-python busdata3.py
+  python busdata1.py
+  python busdata2.py
+  python busdata3.py
 
   ```
 
 
 * Start Web App
   ```
-python app.py
+  python app.py
   ```
